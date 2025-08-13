@@ -36,7 +36,7 @@ impl Default for Person {
 impl From<&str> for Person {
     fn from(s: &str) -> Self {
         let r: Vec<_> = s.split(",").collect();
-        if r.len() != 2 || r[0] == "" {
+        if r.len() != 2 || r[0].is_empty() {
             return Self::default();
         }
 
